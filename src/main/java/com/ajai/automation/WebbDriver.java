@@ -1,13 +1,16 @@
-package BrowserAutmation;
+package com.ajai.automation;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import com.ajai.utils.Driverorigin;
+import com.ajai.utils.ScreenShotProcess;
+
 public class WebbDriver {
 	public static void main(String[] args) {
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = Driverorigin.driverOrigin();
 		driver.get("https://oceanacademy.co.in/");
 		driver.manage().window().maximize();
 		driver.findElement(By.linkText("Courses")).click();
@@ -18,6 +21,7 @@ public class WebbDriver {
 			e.printStackTrace();
 		}
 		driver.findElement(By.linkText("Online Courses")).click();
+		ScreenShotProcess.doScrnShot(driver);
 		
 		
 	}
